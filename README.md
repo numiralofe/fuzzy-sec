@@ -17,7 +17,13 @@ Build an hybrid pipeline solution with availability in multiple regions across m
 
 ## An Hypothetical Fuzz Stack
 
-Software is composed by several services, some services communicate with each other, some depend on an SQL database while others on queuing message brokers or in memory databases being that the components are as follows:
+Our stack is composed by several services, being that: 
+
+* some services communicate with each other
+* others depend on an SQL database 
+* others depend on message brokers or/ in memory databases.
+
+Bellow you can read a high level resume of our stack flow and components:
 
 * **Frontend** is a js application that includes an API client that issues requests to the **Webservices** from the user's browser.
 
