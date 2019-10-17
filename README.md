@@ -15,7 +15,7 @@ Some constrains:
 
 Build an hybrid pipeline solution with availability in multiple regions across multiple providers (SAAS / cloud PAAS / bare metal IAAS) with traffic geo distribution.
 
-## An Hypothetical Fuzz Stack
+## An Hypothetical fuzzy-sec Stack
 
 The stack is composed by several services and bellow you can read a high level resume of this stack and its components:
 
