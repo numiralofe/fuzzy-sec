@@ -5,7 +5,7 @@ As mentioned on the stack description communication between webservices and proc
 
 Another problem is the requirement to control user sessions so that regardless the area /env where the end user is coming from the session information is stored on a system that can be shared across areas and environments.
 
-To solve the above problems, we have a Shared Services Area that holds the services that will provide solutions for these requirements, since these Shared Services Area seats in the midle between webservices and processing, we will have dedicated vpn's connecting from the cloud provider and the services area so that both areas have access to those services.
+To help solving the mentioned problems, we have a Shared Services Area that holds the services that will provide solutions for those requirements, since Shared Services Area seats in the middle between webservices and processing, we will have dedicated VPN's connecting the VPC's from the cloud provider's so that both webservices and/or processing area's have access to this shared services.
 
 For the message queueing the chosen solution is RabbitMQ because its a system that can scale to process and handle thousands of messages in simultaneous.
 
