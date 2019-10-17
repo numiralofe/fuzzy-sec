@@ -34,9 +34,11 @@ service {
                local_bind_port = 8000
              }
            }
+         }
+       }
+   }   
 ```
 
-Example Diagram:
 ![Service Mesh](../images/fuzzsec-ServiceMesh.png?raw=true)
 
 By using consul connect we:

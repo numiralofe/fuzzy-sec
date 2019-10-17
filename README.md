@@ -52,8 +52,8 @@ From the infrastructure perspective these would be the tools and resources that 
 * [**Applicational Scaling**: Nomad ](pages/applicational_autoscaling.md)
 * [**Configuration Management**: Git and Gonsul](pages/configuration_management.md)
 * [**Secrets & Credentials Management**: Vault](pages/secrets_and_credentials.md)
-* [**External Traffic, Shaping & Geo Distribution**: Geo DNS Policies](pages/external_traffic.md)
-* [**Internal Traffic & Service Mesh**: traefik, nginx and consul service mesh.](pages/internal_traffic.md)
+* [**External Traffic & Geo Distribution**: Geo DNS Policies & Traefik](pages/external_traffic.md)
+* [**Internal Traffic & Service Mesh**: consul service mesh.](pages/internal_traffic.md)
 * [**Monitoring and Logging**: Elastic Search / Kibana / Grafana / Prometheus.](pages/monitoring_logging.md)
 
 **( Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)**

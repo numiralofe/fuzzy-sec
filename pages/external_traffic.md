@@ -26,5 +26,22 @@ On the example above, fuzz-sec.com would contain the A Records from eu.fuzz-sec.
 For the webservices API public endpoint SSL termination and offload will be done on the top root load balancers of each area/provider.
 
 
+## WebServices Public Endpoint
 
+We would use traefik to manage public endpoints for webservices that expose a public api, with traefik we would use the following features to solve multi domain and multi env problem:
+
+
+* Since it has direct integration with consul we can read services from there and declare  consul dynamic properties so that apps are configured according to the place where they are running.
+* by using tags we can easily handle multi domain pools configurations and we can set them at the hcl level.
+
+```
+service {
+        name = "${NOMAD_META_SERVICE_ALIAS}-${meta.environment}"
+        port = "http"
+        tags = ["webservices version: ${NOMAD_META_SERVICE_VERSION}",
+        "traefik.enable=true",
+        "traefik.frontend.entryPoints=https",
+        "traefikdmz.frontend.rule=Host:eu-dc1.fuzzy-sec.com" ]
+}   
+```
 

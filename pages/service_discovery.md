@@ -1,4 +1,5 @@
-# Service Discovery / Mesh
+# Service Discovery / Service Mesh
+
 [back](../README.md)
 
 Consul is a service discovery / mesh solution providing a full featured control plane with service discovery, configuration, and segmentation functionality. Each of these features can be used individually as needed, or they can be used together to build a full service mesh. Consul requires a data plane and supports both a proxy and native integration model.
