@@ -24,7 +24,7 @@ path "/database/creds/mysqlrole" {
 
 **The RabbitMQ secrets engine** it would generate credentials dynamically based on configured roles, this means that services that need to access to the RabbitMQ Cluster no longer need to hardcode credentials avoiding to have them in repositories and configurations files, instead services can request them from Vault.
 
-**Certificates secrets engine** we can also use vault to keep certificates, here we have 2 options, or we create our own certs and upload them to vault so that application can request them at run time, or we can integrate with letsencrypt so that certificates are dynamical generated.
+**Certificates secrets engine** we can also use vault to keep certificates, here we have 2 options, or we create our own certs and upload them to vault so that application can request them at run time, or we can integrate with letsencrypt so that certificates are dynamically generated.
 
 ```
 # Enable key/value secret engine for the certificates path
