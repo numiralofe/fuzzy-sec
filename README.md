@@ -23,15 +23,15 @@ The stack is composed by several services and bellow you can read a high level r
 
 * **Webservices** is a *golang* application that provides a web API that **Frontend** uses, it needs an SQL database to store persistent data, like user info and configurations and its also responsible by creating job requests that **Controllers** will consume latter.
 
-* **Controller** are a *python* application that manages jobs requested by issued by **Webservices** it's also responsible to create and send tasks to  **Scheduler** so that they are processed by **Workers**.
+* **Controller** is a *python* application that manages jobs requested issued by **Webservices** it's also responsible to create and send tasks to  **Scheduler** so that they are processed by **Workers**.
 
-* **Scheduler** are a *golang* application receive tasks from **Controller's** and they are responsible to schedule them on pre reserved time slots on to  **Dispatcher's**.
+* **Scheduler** is a *golang* application receive tasks from **Controller's** and its also  responsible to schedule those on pre reserved time slots on to  **Dispatcher's**.
 
-* **Dispatcher** are a *python* application that receive's Tasks, **Scheduler** and are also responsible to send task results back to **Controllers**
+* **Dispatcher** is a *python* application that receive's Tasks from **Scheduler** and is also responsible to send task results back to **Controllers**
 
-* **Workers** are a *python* application that pull requests from **Dispatcher** and process's pool of tasks that **Dispatcher** have.
+* **Workers** is a *python* application that pull requests from **Dispatcher** and process's pool of tasks that **Dispatcher** have.
 
-* **Shared Services** in the above stack process's are mainly asynchronous, for instance communication and requests between controllers and webservices or controllers and dispatchers are done mainly with message queue's, or for instance webservices have the need to persist user sessions across environments. 
+* **Shared Services** in this stack process's are mainly asynchronous, for instance communication and requests between controllers and webservices or controllers and dispatchers are done mainly with message queue's, or for instance webservices have the need to persist user sessions across environments. 
 
 * **Data Persistency** in the above stack there are 2 main types of data that needs to be persisted, an SQL based one where application configurations and user data is kept, and a non SQL layer that stores full text data gathered and processed by workers and dispatchers.
 
