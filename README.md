@@ -31,7 +31,7 @@ The stack is composed by several services and bellow you can read a high level r
 
 * **Workers** is a *python* application that pull requests from **Dispatcher** and process's pool of tasks that **Dispatcher** have.
 
-* **Shared Services** in this stack process's are mainly asynchronous, for instance communication and requests between controllers and webservices or controllers and dispatchers are done mainly with message queue's, or for instance webservices have the need to persist user sessions across environments. 
+* **Shared Services** in this stack process's are mainly asynchronous, for instance communication and requests between controllers and webservices or controllers and dispatchers are done mainly with message queue's, another requirement is that webservices  need to persist user sessions across environments. 
 
 * **Data Persistency** in the above stack there are 2 main types of data that needs to be persisted, an SQL based one where application configurations and user data is kept, and a non SQL layer that stores full text data gathered and processed by workers and dispatchers.
 
