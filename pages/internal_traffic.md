@@ -36,11 +36,11 @@ service {
            }
 ```
 
+Example Diagram:
+![Service Mesh](../images/fuzzsec-ServiceMesh.png?raw=true)
+
 By using consul connect we:
 
 * secure connections between endpoints by using TLS.
 * get grained control from what connects with what
 * avoid the overhead of load balancers to manage traffic between services since they will communicate directly.
-
-
-![Service Mesh](../images/fuzzsec-ServiceMesh.png?raw=true)
