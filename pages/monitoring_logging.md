@@ -6,17 +6,14 @@
 
 For monitoring we could use an hybrid approach 
 
-* Prometheus scraping data from containers and applications that we can use this data to trigger events like autoscaling actions or alerts and notifications.
+* Prometheus scraping data from containers and applications that we can use to trigger events like autoscaling actions or alerts and notifications.
 
 * Taking in consideration that we also have the elk stack available to gather and collect logs we could use metricbeat to collect data about system info, running containers, applications metrics and persist this data over time on the elastic search cluster.
 
 **Deploying Prometheus**
 
-We would deploy prometheus service as a data source that scraps data from all the containers and raw payloads that were executed or are in execution by the cluster, in order to achieve this we would implement 2 simple solutions:
-
-by using nomad to orchestrate all applicational deployments we can take advantage of nomad agent metrics built in functionality since at this level we have available, metrics from all running containers and running raw payloads, in order to gather all metrics in a single location we need to deploy Prometheus in the cluster itself so that from there we can start scraping and collecting metrics from running applications.
-
-First for all this to happen we need to enable telemetry on the Nomad nodes and configure Prometheus to use Consul for service discovery. 
+we can take advantage of nomad agent metrics built in functionality because at this level we have available numbers from all running containers, running raw payloads, cpu usage, memory, etc. 
+in order to gather all metrics in a single location we need to deploy Prometheus in the cluster itself so that from there we can start scraping and collecting metrics, first for all this to happen we need to enable telemetry on the Nomad nodes and configure Prometheus to use Consul for service discovery. 
 
 To enable telemetry on the nomad cluster:
 
@@ -30,7 +27,7 @@ telemetry {
 }
 ````
 
-The deploy prometheus on the nomad cluster to gather data from containers/services/raw_payloads that are registered in consul.
+Then deploy prometheus on the nomad cluster to gather data from containers/services/raw_payloads that are registered in consul.
 
 ````
     task "prometheus" {
