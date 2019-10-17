@@ -9,33 +9,31 @@ We can declare the service on consul using nomad hcl stanza specification:
 
 nomad stanza that deploys the worker instances:
 ```
-            config {
-                command = "/usr/local/bin/consul"
-                args    = [
-                    "connect", "proxy",
-                    "-service", "worker",
-                    "-service-addr", "${NOMAD_ADDR_worker_tcp}",
-                    "-listen", ":${NOMAD_PORT_tcp}",
-                    "-register",
-                ]
-            }
+service {
+    name = "“controllers"
+    port = "8000"
+
+    connect {
+        sidecar_service {}
+        }
+}
 ```
 
-
-Then we can reuse it on the dispatcher jobs and make the workers service available inside the dispatcher containers as a local port, avoiding this way internal load balancing between running containers of the services:
+Then we can reuse it on the workers jobs and make the controllers service available inside the workers containers as a local port, avoiding this way internal load balancing between running containers of the services:
 
 ```
-        task "proxy" {
-            driver = "raw_exec"
+service {
+       name = workers
+       port = “http_port”
 
-            config {
-                command = "/usr/local/bin/consul"
-                args    = [
-                    "connect", "proxy",
-                    "-service", "dispatcher",
-                    "-upstream", "worker:${NOMAD_PORT_tcp}",
-                ]
-            }
+       connect {
+         sidecar_service {
+           proxy {
+             upstreams {
+               destination_name = “controllers"
+               local_bind_port = 8000
+             }
+           }
 ```
 
 By using consul connect we:
@@ -45,4 +43,4 @@ By using consul connect we:
 * avoid the overhead of load balancers to manage traffic between services since they will communicate directly.
 
 
-![Service Mesh](images/fuzzsec-ServiceMesh.png?raw=true)
+![Service Mesh](../images/fuzzsec-ServiceMesh.png?raw=true)
