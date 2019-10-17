@@ -9,7 +9,9 @@ To help solving the mentioned problems, we have a Shared Services Area that hold
 
 For the message queueing the chosen solution is RabbitMQ because its a system that can scale to process and handle thousands of messages in simultaneous.
 
-For the inmemory database, the chosen solution is Redis again by the same reasons as RabbitMQ. 
+For the inmemory database, the chosen solution is Redis again by the same scalability reasons has RabbitMQ. 
+
+We need to take in account that any of this data is meant to be persisted.
 
 On this area we also have a nomad cluster and both services are deployed inside the cluster, since this will allow us to set scaling policies for both services in case its required to scale them.
 
