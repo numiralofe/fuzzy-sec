@@ -80,6 +80,40 @@ task "worker" {
 }  
 ```
 
+## Web hook Example
+
+As an example lets imagine the following scenario for example hcl stanza where we are "hard coding" the application version to be deployed:
+
+````
+task "webservice" {
+  driver = "docker"
+
+  config {
+    image = "webserver:3.2"
+    labels {
+      group = "webserver"
+    }
+  }
+}
+````
+
+If instead we instruct the hcl stanza to fetch the key value for the image version from a value defined in consul k/v store, like this:
+
+````
+task "webservice" {
+  driver = "docker"
+
+  config {
+    image = "webserver:{{ deployments/webserver_version }}"
+    labels {
+      group = "webserver"
+    }
+  }
+}
+````
+
+From jenkins / drone we just need to create/enable a simple web hook that updates a git repo file that by its turn will be automatically pushed to consul k/v by gonsul, this action will automatically trigger nomad to execute the deployment/update for the service in question with the new version.
+
 
 
 

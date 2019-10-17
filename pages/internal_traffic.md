@@ -44,3 +44,5 @@ By using consul connect we:
 * get grained control from what connects with what
 * avoid the overhead of load balancers to manage traffic between services since they will communicate directly.
 
+
+![Service Mesh](images/fuzzsec-ServiceMesh.png?raw=true)
