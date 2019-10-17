@@ -54,5 +54,7 @@ From the infrastructure perspective these would be the tools and resources that 
 * [**External Traffic & Geo Distribution**: Geo DNS Policies & Traefik](pages/external_traffic.md)
 * [**Internal Traffic & Service Mesh**: consul service mesh.](pages/internal_traffic.md)
 * [**Monitoring and Logging**: Elastic Search / Kibana / Grafana / Prometheus.](pages/monitoring_logging.md)
+* [**Shared Services**: RabbitMQ / Redis.](pages/shared_services.md)
+* [**Data Persistency**: Elastic Search / Solr / MySQL](pages/data_persistency.md)
 
 **( Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)**

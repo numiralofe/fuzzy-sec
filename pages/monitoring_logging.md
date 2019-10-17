@@ -6,9 +6,9 @@
 
 For monitoring we could use an hybrid approach 
 
-**1** Prometheus scraping metrics from containers and applications that we can use to trigger events like autoscaling actions or alerts and notifications.
+**1)** Prometheus scraping metrics from containers and applications that we can use to trigger events like autoscaling actions or alerts and notifications.
 
-**2** Taking in consideration that we also have the elk stack available to gather and collect logs we could use metricbeat to collect data about system info, running containers, applications metrics and persist this data over time on the elastic search cluster.
+**2)** Taking in consideration that we also have the elk stack available to gather and collect logs we could use metricbeat to collect data about system info, running containers, applications metrics and persist this data over time on the elastic search cluster.
 
 **Deploying Prometheus**
 

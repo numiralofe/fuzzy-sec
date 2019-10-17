@@ -16,7 +16,7 @@ The main idea is:
 2. This configuration is fetched from consul on application startup based on the application name + env profiles
 3. Properties are refreshed periodically to check for new changes and broadcasted across services.
 
-We would then use gonsul to sync all changes happening on the git repo and make them available in consul k/v, Gonsul will recursively parse all the files in the git directory. Whenever Gonsul moves one level deep into a folder, the folder name is added as a Consul KV path part and as soon as it finds a file (either .json, .txt or .ini - or any other given in parameters) it will take the file name (without the extension) and append to the Consul KV path, making it a key and the file content is added as the value.
+We would then use gonsul to sync all changes happening on the git repo and make them available in consul k/v, Gonsul will recursively parse all the files in the git directory. Whenever gonsul moves one level deep into a folder, the folder name is added as a Consul KV path part and as soon as it finds a file (either .json, .txt or .ini - or any other given in parameters) it will take the file name (without the extension) and append to the Consul KV path, making it a key and the file content is added as the value.
 
 Example: Take this repository folder structure:
 
