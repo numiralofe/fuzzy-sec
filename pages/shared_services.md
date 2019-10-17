@@ -3,7 +3,7 @@
 
 As mentioned on the stack description communication between webservices and processing area is achieved using a messaging system, basically each time that the webservices api receives a request from an end user to process a huge batch of data (file to be processed) or a user browsing the react js page and its action requires some processing, a message is placed on message queue system so that controllers can pull those message's and start processing then.
 
-Another problem is the requirement to control user sessions so that regardless the area /env where the user is being redirected to session information is shared across areas and environments.
+Another problem is the requirement to control user sessions so that regardless the area /env where the end user is coming from the session information is stored on a system that can be shared across areas and environments.
 
 To solve the above problems, we have a Shared Services Area that holds the services that will provide solutions for these requirements, since these Shared Services Area seats in the midle between webservices and processing, we will have dedicated vpn's connecting from the cloud provider and the services area so that both areas have access to those services.
 
