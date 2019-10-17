@@ -80,7 +80,7 @@ task "worker" {
 }  
 ```
 
-## Web hook Example
+## Web hook deployment example
 
 As an example lets imagine the following scenario for example hcl stanza where we are "hard coding" the application version to be deployed:
 

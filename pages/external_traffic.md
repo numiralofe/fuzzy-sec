@@ -1,7 +1,7 @@
 # External Traffic
 [back](../README.md)
 
-For the frontend application, that is a js application, in order to scale we would deploy it on any CDN service, for this we could use google/azure/aws buckets or a dedicated service like cloudfare, by doing this we would delegate to those providers the scaling problem of serving the frontend js app at scale.
+For the frontend application, that is a react js application, in order to scale we would deploy it on any CDN service, for this we could use google/azure/aws buckets or a dedicated service like cloudfare, by doing this we would delegate to those providers the scaling problem of serving the frontend js app at scale.
 
 Then at the webservice layer i would solve the geolocation routing by using AWS Route 53 DNS Service (or another similar approach) since this type of solution allows to choose the resources that serve traffic based on the geographic location of the users by using the location that DNS queries originate from and with that we can route all requests from Europe to be routed to load balancer's in europe and/or requests from USA to us.
 
@@ -21,10 +21,6 @@ Example.
 
 On the example above, fuzz-sec.com would contain the A Records from eu.fuzz-sec.com and us.fuzz-sec.com so that end users requests on each continent would be redirected to their closest location, once there, we could have a main load balancer that receives all requests for Europe region (or US depending on the origin request) and then map inside the region to one of the active locations (eu-dc1 / eu-dc2 or us-dc1 / us-dc2), with this scenario we achieve traffic geo distribution and at the same time full stack redundancy since in case one of the regions fails we have a second pool inside the same geographical area but on a different data center.
 
-## SSL Offload
-
-For the webservices API public endpoint SSL termination and offload will be done on the top root load balancers of each area/provider.
-
 
 ## WebServices Public Endpoint
 
@@ -36,7 +32,7 @@ We would use traefik to manage public endpoints for webservices that expose a pu
 
 ```
 service {
-        name = "${NOMAD_META_SERVICE_ALIAS}-${meta.environment}"
+        name = "${NOMAD_META_SERVICE_NAME}"
         port = "http"
         tags = ["webservices version: ${NOMAD_META_SERVICE_VERSION}",
         "traefik.enable=true",
@@ -45,3 +41,6 @@ service {
 }   
 ```
 
+## SSL Offload
+
+For the public webservices API endpoint SSL termination & offload will be done on the top root load balancers of each area/provider.

@@ -19,7 +19,7 @@ meta {
     }
 ```
 
-In this case the autoscaler will iterate stored policies, performing calculations to figure out  job group CPU and memory consummation and if consumption is above 75% or below 30%, the scaler will request scaling of the job group as long as the scaling policies limits are not violated.
+In this case the autoscaler will iterate stored policies, performing calculations to figure out  job group CPU and memory usage and for the example if consumption is above 75% or below 30%, the scaler will request scaling of the job group as long as the scaling policies limits are not violated.
 
 
 ## Scale API and external metrics.
