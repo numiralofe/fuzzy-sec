@@ -38,6 +38,16 @@ Example for 400 connections:
 
 **For MySQL/xtraDB with large datasets:**
 
+Some OS Optimization points:
+- dirty_ratio: defines a percentage value. Writeout of dirty data begins (via pdflush) when dirty data comprises this percentage of total system memory. The default value is 20.
+- dirty_background_ratio: defines a percentage value. Writeout of dirty data begins in the background (via pdflush) when dirty data comprises this percentage of total memory. The default value is 10.
+- vfs_cache_pressure: it controls the tendency of the kernel to reclaim memory. Decreasing vfs_cache_pressure causes the kernel to prefer to retain dentry and inode caches. Increasing vfs_cache_pressure beyond 100 causes the kernel to prefer to reclaim dentries and inodes. The default value is 100.
+
+Some Cluster Optimization points:
+- query_cache_size / query_cache_type: if we are going to have thousands from exact the same query enabling this can optimize a lot response speed.
+- table_open_cache / thread_cache_size: this settings should be tuned according to the workload.
+wsrep_slave_threads - on an active /active cluster this setting should also be defined depending on the dataset and writes frequency.
+
 
 **noSQL datasource:**
 
@@ -56,10 +66,10 @@ Considerations for the elastic cluster:
 
 * Replication: The replication formula used by Elasticsearch for consistency is: 
 ```
-primary + number_of_replicas) / 2 + 1
+(primary + number_of_replicas) / 2 + 1
 ```
 
-* Optimising allocation - based data requirements, we could classify data into hot and cold and indices that are accessed more frequently than others, can have allocated more data nodes while indices that are less frequently accessed indices can have less resources allocated.
+* Optimizing allocation - based data requirements, we could classify data into hot and cold and indices that are accessed more frequently than others, can have allocated more data nodes while indices that are less frequently accessed indices can have less resources allocated.
 
 * Resources: we should take in consideration that too much heap can subject to long garbage collection pauses, the standard recommendation is to give 50% of the available memory to elasticsearch heap, while leaving the other 50% free.
 
