@@ -41,7 +41,7 @@ Terraform pre builded Modules to deploy multiple services:
 
 **Packer & Image Templating**
 
-Due to the way that the auto-scaling process works at cloud providers (aws/gcloud/azure) and also because its important to keep consistency across datacenter resources we should ideally use the same set of software across all of them, also for some situations (namely auto-scaling actions) its more efficient to have pre installed software components that we need so that they are available on boot time and avoid this way the extra latency that download and install them brings. 
+Due to the way that the auto-scaling process works at cloud providers (aws/gcloud/azure) and also because its important to keep consistency across datacenter resources we should ideally use the same set of software across all of them, also for some situations (namely auto-scaling actions) its more efficient to have pre installed software components that we need so that they are available on boot time and avoid the extra latency that download and install them brings. 
 
 To solve the mentioned issues we need to have pre baked base OS images, for that i am including  a process that manages and builds this images using packer (Hashicorp Packer) that allows us to build them.
 
@@ -53,9 +53,9 @@ To solve the mentioned issues we need to have pre baked base OS images, for that
 
 On this point we pretty much depend on the provider's that we decide to use, i would prefer providers like Packet or LeaseWeb (mentioned on the providerd page) since those have available API's that we can use to interact and create phisical resources with pre installed OS Versions allowing us this way to control and automate installation of base components.
 
-We could offcourse install OpenStack, kvm Proxmox or any other complex solution, but trying to follow the KISS principle and if our workload types are common and typified i would like to make a special mention to the following combo :)
+We can offcourse install OpenStack, kvm Proxmox or any other complex solution, but trying to follow the KISS principle and if workload types are common and typified i would like to make a special mention to the following combo :)
 
-***kvm + nomad + packer***
+***kvm + nomad + consul + packer***
 
 Assuming that we have the process described above that allows us to create golden-images that we use on the cloud providers, we could reuse the same process to build quemu images using packer.
 
@@ -64,6 +64,9 @@ Assuming that we have the process described above that allows us to create golde
 And then:
 
 1 - request a new phisical machine by using the provider api and install nomad and consul agents.
+
+An example using packet:
+
 ```
 curl -v -X POST -H 'X-Auth-Token: <API-KEY>' -H 'Content-Type: application/json' -d '
 {
@@ -111,7 +114,9 @@ consul agent -retry-join=["eu-dc1-fuzz-sec"]
 nomad server join eu-dc1-fuzz-sec:4648
 ```
 
-3 -  And then because we have tempated quemu images we can start deploying quemu workloads to the created resource.
+3 -  And then because we have tempated quemu images we can use nomad to start deploying quemu workloads to the created resource.
+
+nomad job to deploy and start vm's on the new resource:
 
 ```
 task "workload" {
@@ -134,7 +139,7 @@ task "workload" {
   }
 ```
 
-**Considerations:** I am giving an example on how to boot Virtual Machines but the same  approach can be used to install docker and run only docker container worloads, or even raw_executions worksloads.
+**Considerations:** This example is on how to boot Virtual Machines but the same approach can be used to install docker and run only docker container worloads, or even raw_executions worksloads.
 
 
 
