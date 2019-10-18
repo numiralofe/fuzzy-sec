@@ -51,9 +51,9 @@ To solve the mentioned issues we need to have pre baked base OS images, for that
 
 **Bare Metal**
 
-On this point we pretty much depend on the provider's that we decide to use, i would prefer providers like Packet or LeaseWeb (mentioned on the providerd page) since those have available API's that we can use to interact and create phisical resources with pre installed OS Versions allowing us this way to control and automate installation of base components.
+On this point we pretty much depend on the provider's that we decide to use, i would prefer providers like Packet or LeaseWeb (mentioned on the providers page) since those have available API's that we can use to interact and create physical resources with pre installed OS Versions allowing us this way to control and automate installation of base components.
 
-We can offcourse install OpenStack, kvm Proxmox or any other complex solution, but trying to follow the KISS principle and if workload types are common and typified i would like to make a special mention to the following combo :)
+We can off course install OpenStack, kvm Proxmox or any other complex solution, but trying to follow the ***KISS*** principle and if workload types are common and typified i would like to make a special mention to the following combo :)
 
 ***kvm + nomad + consul + packer***
 
@@ -63,7 +63,7 @@ Assuming that we have the process described above that allows us to create golde
 
 And then:
 
-1 - request a new phisical machine by using the provider api and install nomad and consul agents.
+1 - request a new physical machine by using the provider api and install nomad and consul agents.
 
 An example using packet:
 
@@ -114,7 +114,7 @@ consul agent -retry-join=["eu-dc1-fuzz-sec"]
 nomad server join eu-dc1-fuzz-sec:4648
 ```
 
-3 -  And then because we have tempated quemu images we can use nomad to start deploying quemu workloads to the created resource.
+3 -  And then because we have templated quemu images we can use nomad to start deploying quemu workloads to the created resource.
 
 nomad job to deploy and start vm's on the new resource:
 
@@ -139,7 +139,7 @@ task "workload" {
   }
 ```
 
-**Considerations:** This example is on how to boot Virtual Machines but the same approach can be used to install docker and run only docker container worloads, or even raw_executions worksloads.
+**Considerations:** This example is on how to boot Virtual Machines but the same approach can be used to install docker and run only docker container workloads, or even raw_executions workloads.
 
 
 
