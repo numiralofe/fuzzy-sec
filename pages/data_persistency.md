@@ -25,8 +25,10 @@ Some OS Optimization points:
 - kernel.shmall: This parameter must to have a SHMMAX/PAGE_SIZE as minimun.
 - vm.nr_hugepages: This parameter set the number of huge pages to configure, it is a value dependent on the page size and configuration parameters of the instances related to shared memory
 - Optimum performance is achieved in values of 25% tol 40% of the RAM.
+
 Some Cluster Optimization points:
 - another key point is the calculation for shared_buffers / wal_buffer / wal_memory.
+
 ```
 Example for 400 connections:
 400 concurrent connections, we will be using 400 connections*32MB/connection + 8GB (shared buffers)+ aimed memory to autocaavuum=
