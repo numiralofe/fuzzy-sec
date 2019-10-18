@@ -39,14 +39,14 @@ Example for 400 connections:
 **For MySQL/xtraDB with large datasets:**
 
 Some OS Optimization points:
-- dirty_ratio: defines a percentage value. Writeout of dirty data begins (via pdflush) when dirty data comprises this percentage of total system memory. The default value is 20.
-- dirty_background_ratio: defines a percentage value. Writeout of dirty data begins in the background (via pdflush) when dirty data comprises this percentage of total memory. The default value is 10.
-- vfs_cache_pressure: it controls the tendency of the kernel to reclaim memory. Decreasing vfs_cache_pressure causes the kernel to prefer to retain dentry and inode caches. Increasing vfs_cache_pressure beyond 100 causes the kernel to prefer to reclaim dentries and inodes. The default value is 100.
+- dirty_ratio: defines a percentage value. Writeout of dirty data begins (via pdflush) when dirty data comprises this percentage of total system memory.
+- dirty_background_ratio: defines a percentage value. Writeout of dirty data begins in the background (via pdflush) when dirty data comprises this percentage of total memory.
+- vfs_cache_pressure: it controls the tendency of the kernel to reclaim memory. Decreasing vfs_cache_pressure causes the kernel to prefer to retain dentries and inode caches. Increasing vfs_cache_pressure beyond 100 causes the kernel to prefer to reclaim dentries and inodes.
 
 Some Cluster Optimization points:
 - query_cache_size / query_cache_type: if we are going to have thousands from exact the same query enabling this can optimize a lot response speed.
 - table_open_cache / thread_cache_size: this settings should be tuned according to the workload.
-wsrep_slave_threads - on an active /active cluster this setting should also be defined depending on the dataset and writes frequency.
+- wsrep_slave_threads - on an active /active cluster this setting should also be defined depending on the dataset and writes frequency.
 
 
 **noSQL datasource:**
