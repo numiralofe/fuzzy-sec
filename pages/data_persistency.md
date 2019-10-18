@@ -18,7 +18,7 @@ Our setup has a 3 nodes cluster active/active, if mysql, we use xtradb multi mas
 
 Some considerations:
 
-For postgresSQL with large datasets:
+**For postgresSQL with large datasets:**
 
 Some OS Optimization points:
 - kernel.shmmax: This value must to be higher than the value that is configurated in the shared_buffers parameter
@@ -35,7 +35,7 @@ Example for 400 connections:
 ( 400x32MB=12.8GB=8GB=20GB=10GB=29/30GB )
 ```
 
-For MySQL/xtraDB with large datasets:
+**For MySQL/xtraDB with large datasets:**
 
 
 **noSQL datasource:**
