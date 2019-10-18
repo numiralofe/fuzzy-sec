@@ -7,7 +7,8 @@ The data persistent layer is perhaps the most complex one, and its key points ar
 * Amount of data.
 
 **SQL Datasource**
-For the SQL data source either MySQL or Posgtgres are good choices since both of them provide:
+
+For the SQL data source either MySQL or Postgres are good choices since both of them provide:
 
 - active/active cluster 
 - federation

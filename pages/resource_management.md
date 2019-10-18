@@ -43,9 +43,9 @@ Terraform pre builded Modules to deploy multiple services:
 
 Due to the way that the auto-scaling process works at cloud providers (aws/gcloud/azure) and also because its important to keep consistency across datacenter resources we should ideally use the same set of software across all of them, also for some situations (namely auto-scaling actions) its more efficient to have pre installed software components that we need so that they are available on boot time and avoid the extra latency that download and install them brings. 
 
-To solve the mentioned issues we need to have pre baked base OS images, for that i am including  a process that manages and builds this images using packer (Hashicorp Packer) that allows us to build them.
+To solve the mentioned issues we need to have pre baked base OS images, for that i am including  a process that manages and builds images using packer (Hashicorp Packer).
 
-* common packer configuration file that builds and targets aws & gcloud & azure and kvm.
+* common packer configuration file that builds and targets aws / gcloud / azure / kvm.
 * env variables that defines which version's and software we want to bake in.
 * have a drone/jenkins file that picks up changes at the packer main config file and automatically builds the OS images and push them to the cloud providers image artifactory.
 

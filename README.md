@@ -19,7 +19,7 @@ Build an hybrid pipeline solution with availability in multiple regions across m
 
 The stack is composed by several services and bellow you can read a high level resume of this stack and its components:
 
-* **Frontend** is a *react js* application that includes an API client that issues requests to the **Webservices** from the user's browser.
+* **Frontend** is a *angular js* application that includes an API client that issues requests to the **Webservices** from the user's browser.
 
 * **Webservices** is a *golang* application that provides a web API that **Frontend** uses, it needs an SQL database to store persistent data, like user info and configurations and its also responsible by creating job requests that **Controllers** will consume latter.
 
@@ -55,6 +55,6 @@ From the infrastructure perspective these would be the tools and resources that 
 * [**Internal Traffic & Service Mesh**: consul service mesh.](pages/internal_traffic.md)
 * [**Monitoring and Logging**: Elastic Search / Kibana / Grafana / Prometheus.](pages/monitoring_logging.md)
 * [**Shared Services**: RabbitMQ / Redis.](pages/shared_services.md)
-* [**Data Persistency**: Elastic Search / Cassandra / MySQL](pages/data_persistency.md)
+* [**Data Persistency**: Elastic Search / Cassandra / SQL](pages/data_persistency.md)
 
 **( Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)**
