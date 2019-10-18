@@ -3,8 +3,8 @@
 
 The data persistent layer is perhaps the most complex one, and its key points are: 
 * How it is distributed.
-* What is its geographical scope. 
-* The Amount of data.
+* Geographical scope. 
+* Amount of data.
 
 **SQL Datasource**
 For the SQL data source either MySQL or Posgtgres are good choices since both of them provide:
