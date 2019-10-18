@@ -9,7 +9,9 @@ To help solving the mentioned problems, we have a Shared Services Area that hold
 
 For the message queueing the chosen solution is RabbitMQ because its a system that can scale to process and handle thousands of messages in simultaneous.
 
-For the inmemory database, the chosen solution is Redis again by the same scalability reasons has RabbitMQ. 
+For the in memory database, the chosen solution is Redis because:
+- we are just using to store and persist user session data.
+- its by desing easy to install and maintain
 
 We need to take in account that any of this data is meant to be persisted.
 

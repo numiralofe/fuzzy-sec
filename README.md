@@ -45,7 +45,7 @@ The stack is composed by several services and bellow you can read a high level r
 From the infrastructure perspective these would be the tools and resources that would facilitate achieving the main goal:
 
 * [**Providers**: Aws / Google / Packet ](pages/providers.md)
-* [**Resources Management**: Terraform / Ansible](pages/resource_management.md)
+* [**Resources Management**: Terraform / Ansible / Packer](pages/resource_management.md)
 * [**Service Discovery**: Consul](pages/service_discovery.md)
 * [**Applicational Deployments**: Nomad ](pages/applicational_deployment.md)
 * [**Applicational Scaling**: Nomad ](pages/applicational_autoscaling.md)
