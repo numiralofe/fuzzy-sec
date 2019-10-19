@@ -51,15 +51,17 @@ Some Cluster Optimization points:
 
 **noSQL datasource:**
 
-Cassandra: cluster with 3 nodes.
+**Cassandra:** 
 
-Considerations:
--single ring for the 3nodes
-
-
+- cluster with 3 nodes.
+- single ring for the 3nodes
 
 
-Elastic Search: cluster with 3 nodes.
+
+
+**Elastic Search:** 
+
+***cluster with 3 nodes***
 
 Considerations for the elastic cluster:
 * Calculate Shard Sizing - Choosing the right number of shards is complicated because we never know how many documents we will get before we start, having lots of shards can be both good and terrible for a cluster, indices and shards management can overload the master node, which might become unresponsive, leading to strange and nasty behavior, as a preemptive measure we should allocate the master nodes with enough resources to cope with the cluster size.
