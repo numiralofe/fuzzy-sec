@@ -59,9 +59,12 @@ From the infrastructure perspective these would be the tools and resources that 
 
 *(Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)*
 
-**Side Note:** You will certainly notice that the proposed solution revolves around the hashicorp stack, but, would like to state that I like their solutions because they are very "Unix like", small and unique binaries without any extra dependencies that works by them selfs or that one can easily integrate with others to provide more functionality. 
+## Side Note
 
-**Final Thougts:**
+You will certainly notice that the proposed solution revolves around the hashicorp stack, but, would like to state that I like their solutions because they are very "Unix like", small and unique binaries without any extra dependencies that works by them selfs or that one can easily integrate with others to provide more functionality. 
+
+## Final Thougts
+
 Are there other aproaches to solve the problems mentioned in this document ? 
 of course yes :) 
 
