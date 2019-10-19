@@ -75,4 +75,9 @@ Considerations for the elastic cluster:
 
 * Resources: we should take in consideration that too much heap can subject to long garbage collection pauses, the standard recommendation is to give 50% of the available memory to elasticsearch heap, while leaving the other 50% free.
 
-* Availability from the elastic service to the webservices area: Exposing the elastic search api allows us expose elastic data on services running outside the data persistency layer, communications are over https and authentication is enabled.
+ 
+
+**Availability from the cassandra and elastic service to other areas**
+
+Since both services support encryption and authentication we would expose both apis on a public IP that would have some rules only allowing connections from the IP's that the processing and public api had.
+

@@ -25,7 +25,7 @@ The stack is composed by several services and bellow you can read a high level r
 
 * **Controller** is a *python* application that manages jobs requested issued by **Webservices** it's also responsible to create and send tasks to  **Scheduler** so that they are processed by **Workers**.
 
-* **Scheduler** is a *golang* application receive tasks from **Controller's** and its also  responsible to schedule those on pre reserved time slots on to  **Dispatcher's**.
+* **Scheduler** is a *golang* application that receives tasks from **Controller's** and its also  responsible to schedule those on pre reserved time slots on to  **Dispatcher's**.
 
 * **Dispatcher** is a *python* application that receive's Tasks from **Scheduler** and is also responsible to send task results back to **Controllers**
 
@@ -57,4 +57,16 @@ From the infrastructure perspective these would be the tools and resources that 
 * [**Shared Services**: RabbitMQ / Redis.](pages/shared_services.md)
 * [**Data Persistency**: Elastic Search / Cassandra / SQL](pages/data_persistency.md)
 
-**( Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)**
+***( Please click on the links from each section above where on a separated page i try to give a more detailed view on how would I use them and some code examples based on my experience.)***
+
+**Side Note:** You will certainly notice that the proposed solution revolves around the hashicorp stack, but, would like to state that I like their solutions because they are very "Unix like", small and unique binaries without any extra dependencies that works by them selfs or that one can easily integrate with others to provide more functionality. 
+
+**Final Thougts:**
+Are there other aproaches to solve the problems mentioned in this document ? 
+of course yes :) 
+
+Will this proposal work ? 
+Yes, I can guarantee from my own experience :) 
+
+Will there be problems? 
+yeps, like with any other solution :-D
