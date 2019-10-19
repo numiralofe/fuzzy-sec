@@ -19,7 +19,7 @@ Build an hybrid pipeline solution with availability in multiple regions across m
 
 The stack is composed by several services and bellow you can read a high level resume of this stack and its components:
 
-* **Frontend** is a *angular js* application that includes an API client that issues requests to the **Webservices** from the user's browser.
+* **Frontend** is a *js* application that includes an API client that issues requests to the **Webservices** from the user's browser.
 
 * **Webservices** is a *golang* application that provides a web API that **Frontend** uses, it needs an SQL database to store persistent data, like user info and configurations and its also responsible by creating job requests that **Controllers** will consume latter.
 

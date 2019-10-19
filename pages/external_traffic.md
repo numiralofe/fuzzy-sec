@@ -1,7 +1,7 @@
 # External Traffic
 [back](../README.md)
 
-For the frontend application, that is a angular js application, in order to scale we would deploy it on any CDN service, for this we could use google/azure/aws buckets or a dedicated service like cloudfare, by doing this we would delegate to those providers the scaling problem of serving the frontend js app at scale.
+For the frontend application, that is a js application, in order to scale we would deploy it on any CDN service, for this we could use google/azure/aws buckets or a dedicated service like cloudfare, by doing this we would delegate to those providers the scaling problem of serving the frontend js app at scale.
 
 Then at the webservice layer i would solve the geolocation routing by using AWS Route 53 DNS Service (or another similar approach) since this type of solution allows to choose the resources that serve traffic based on the geographic location of the users by using the location that DNS queries originate from and with that we can route all requests from Europe to be routed to load balancer's in Europe and/or requests from USA to us.
 
