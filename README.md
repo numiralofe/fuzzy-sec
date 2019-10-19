@@ -61,7 +61,7 @@ From the infrastructure perspective these would be the tools and resources that 
 
 ## Side Note
 
-You will certainly notice that the proposed solution revolves around the hashicorp stack, but, would like to state that I like their solutions because they are very "Unix like", small and unique binaries, without any extra dependencies (they just deliver the functionalities that they were designed to), we can easily integrate with other tools in order to provide extra functionality, and above all, they are OSS and no lockin with any provider.
+You will certainly notice that the proposed solution revolves around the hashicorp stack, but, would like to state that I like their solutions because they are very "Unix like", small and unique binaries, without any extra dependencies (they just deliver the functionalities that they were designed to), we can easily integrate with other tools (frm the hashi stack or not) in order to provide extra functionality, and above all, they are OSS and no lockin with any provider.
 
 ## Final Thougts
 
