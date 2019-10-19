@@ -66,10 +66,13 @@ You will certainly notice that the proposed solution revolves around the hashico
 ## Final Thougts
 
 *Are there other aproaches to solve the problems mentioned in this document ?*
+
 of course yes :) 
 
 *Will this proposal work ?*
+
 Yes, I can guarantee from my own experience :) 
 
 *Will there be problems?*
+
 yeps, like with any other solution :-D
